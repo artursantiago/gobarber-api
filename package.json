@@ -1,5 +1,5 @@
 {
-  "name": "iniciando-back-end",
+  "name": "gobarber",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -10,6 +10,8 @@
   "dependencies": {
     "date-fns": "^2.16.1",
     "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "typeorm": "^0.2.30",
     "uuidv4": "^6.2.3"
   },
   "devDependencies": {
