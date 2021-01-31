@@ -1,11 +1,6 @@
 import { Router } from 'express';
 
 import CreateUserService from '../services/CreateUserServices';
-import User from '../models/User';
-
-interface UserResponse extends Omit<User, 'password'> {
-  password?: string;
-}
 
 const usersRouter = Router();
 
@@ -14,7 +9,7 @@ usersRouter.post('/', async (request, response) => {
     const { name, email, password } = request.body;
     const createUser = new CreateUserService();
 
-    const user: UserResponse = await createUser.execute({
+    const user = await createUser.execute({
       name,
       email,
       password,

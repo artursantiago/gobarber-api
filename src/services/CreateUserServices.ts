@@ -9,8 +9,12 @@ interface Request {
   password: string;
 }
 
+interface Response extends Omit<User, 'password'> {
+  password?: string;
+}
+
 class CreateUserService {
-  public async execute({ name, email, password }: Request): Promise<User> {
+  public async execute({ name, email, password }: Request): Promise<Response> {
     const usersRepository = getRepository(User);
 
     const checkUserExists = await usersRepository.findOne({
